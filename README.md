@@ -6,7 +6,7 @@ please ignore:
 -test.js
 -testregister.js
 
-#commands
+commands:
  -add <Name>                                             |Adds player with <name> to the Roster
  -register                                               |Adds player that uses command to the Roster
  -maketeams                                              |Creates random T & CT Teams
