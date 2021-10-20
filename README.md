@@ -1,11 +1,11 @@
 # CS-GO-5v5-Bot
-
+###############
 !discord token needs to be added in config.json file!
-
+###############
 please ignore:
 -test.js
 -testregister.js
-
+################
 commands:
  -add <Name>                                             |Adds player with <name> to the Roster
  -register                                               |Adds player that uses command to the Roster
