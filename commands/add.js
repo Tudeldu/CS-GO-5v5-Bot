@@ -16,6 +16,9 @@ module.exports = {
         if(teams.undefined.length>=10){
             return 'there are already 10 players registered'
         }
+        if(teams.undefined.includes(player)){
+            return `${player} is already registered!`
+        }
         teams.undefined.push(player)
         fs.writeFileSync('teams.json',JSON.stringify(teams))
         console.log(readTeams())
