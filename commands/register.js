@@ -7,7 +7,7 @@ module.exports = {
 	execute(message, args) {
 		if (!message.guild) return;
         if (message.member.voice.channel) {
-        message.channel.send(pushplayer(message.member.displayName));
+        message.reply(pushplayer(message.member.displayName));
         //message.member.voice.channel.leave();
         } else {
         message.reply('You need to join a voice channel first!');
@@ -18,9 +18,12 @@ module.exports = {
         if(teams.undefined.length>=10){
             return 'there are already 10 players registered'
         }
+        if(teams.undefined.includes(player)){
+            return ' same Name cant be used twice!'
+        }
         teams.undefined.push(player)
         fs.writeFileSync('teams.json',JSON.stringify(teams))
-        return `${player} is now registered\n${teams.undefined.length} of 10 players registered`
+        return ` is now registered\n${teams.undefined.length} of 10 players registered`
     }
   
 	},
