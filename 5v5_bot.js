@@ -26,8 +26,10 @@ client.on('message', message => {
     try {
         command.execute(message, args);
         console.log(message.member.displayName+' has executed '+commandName)
+	fs.appendFileSync("logfile.log", '['+(new Date(Date.now())).toUTCString()+'] '+message.member.displayName+': '+prefix+commandName+'\n');
     } catch (error) {
         console.error(error);
+	fs.appendFileSync("logfile.log", '**************************\n'+'['+(new Date(Date.now())).toUTCString()+']\n'+error+'\n**************************');
         message.reply('there was an error trying to execute that command!');
     }
 });
